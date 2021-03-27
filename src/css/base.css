@@ -1,0 +1,10 @@
+body {
+    background-color: aquamarine;
+}
+* {
+    margin: 0; padding: 0;
+}
+.similan {
+    /*background: url(../images/seoyeji2.jpeg);*/
+    background: url(../images/similan.jpeg);
+}
