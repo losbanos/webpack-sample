@@ -3,7 +3,8 @@ module.exports = class MyWebpackPlugin {
         complier.hooks.done.tap('MyWebpackPlugin', stats => {
             console.log('My Plugin done ::');
         })
-
+        
+        // https://webpack.js.org/contribute/writing-a-plugin/
         complier.hooks.emit.tapAsync('MyWebpackPlugin', (compliation, callback) => {
             const source = compliation.assets['main.js'].source()
             compliation.assets['main.js'].source = () => {
