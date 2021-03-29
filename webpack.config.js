@@ -1,4 +1,5 @@
 const path = require('path');
+const MyWebpackPlugin = require('./my-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -13,7 +14,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: [path.resolve('./module/my-webpack-loader.js')]
+                use: [path.resolve('./my-webpack-loader.js')]
             },
             {
                 test: /\.css$/,
@@ -26,11 +27,14 @@ module.exports = {
                 test: /\.(jpe?g|gif|png)$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 20000,
+                    name: '[name].[ext]?[hash]',
                     publicPath: './dist/',
-                    name: '[name].[ext]?[hash]'
+                    limit: 20000,
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new MyWebpackPlugin()
+    ]
 }
