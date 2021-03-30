@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "cross-env NODE_ENV=development webpack",
-    "build:live": "cross-env NODE_ENV=production webpack"
+    "build:live": "cross-env NODE_ENV=production webpack",
+    "build:normal": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "css-loader": "^5.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.2",
+    "mini-css-extract-plugin": "^1.4.0",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^4.46.0",
