@@ -12,3 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log('process.env.NODE_ENV =', process.env.NODE_ENV);
 console.log('TWO =', TWO);
 console.log('api.domain =', api.domain);
+const p = new Promise((resolve, reject) => {
+    resolve('111');
+})

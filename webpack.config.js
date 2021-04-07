@@ -19,7 +19,15 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: [path.resolve('./my-webpack-loader.js')]
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: path.resolve('./my-webpack-loader.js'),
+                    },
+                    {
+                        loader: 'babel-loader',
+                    }
+                ]
             },
             {
                 test: /\.css$/,
