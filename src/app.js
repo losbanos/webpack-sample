@@ -1,5 +1,6 @@
 import {sum} from './math';
 import './css/base.css';
+import './scss/normalize.scss';
 import seoyeji from './images/seoyeji2.jpeg';
 
 document.addEventListener('DOMContentLoaded', () => {
