@@ -15,4 +15,6 @@ console.log('TWO =', TWO);
 console.log('api.domain =', api.domain);
 const p = new Promise((resolve, reject) => {
     resolve('111');
-})
+});
+console.log()
+(function(){})()
