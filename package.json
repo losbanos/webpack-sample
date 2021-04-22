@@ -8,7 +8,8 @@
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:live": "cross-env NODE_ENV=production webpack",
     "build:normal": "webpack",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "lint-staged"
   },
   "author": "",
   "license": "ISC",
