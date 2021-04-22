@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:live": "cross-env NODE_ENV=production webpack",
-    "build:normal": "webpack"
+    "build:normal": "webpack",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.2",
+    "husky": "^6.0.0",
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^4.14.1",
     "prettier": "^2.2.1",

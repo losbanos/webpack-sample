@@ -17,4 +17,4 @@ const p = new Promise((resolve, reject) => {
     resolve('111');
 });
 console.log()
-(function(){})()
+(function(){})();;;;;;;;
