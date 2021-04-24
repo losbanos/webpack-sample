@@ -1,5 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# npm script 로 잡아줘야 에디터를 통한 커밋이 동작한다
 npm run lint
