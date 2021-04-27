@@ -16,5 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const p = new Promise((resolve) => {
   resolve("111");
 });
+
 console.log(p);
+console.log("abc");
 console.log()(function () {})();

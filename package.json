@@ -9,7 +9,9 @@
     "build:live": "cross-env NODE_ENV=production webpack",
     "build:normal": "webpack",
     "prepare": "husky install",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "serve:dev": "cross-env NODE_ENV=development webpack serve",
+    "serve:live": "cross-env NODE_ENV=production webpack serve"
   },
   "author": "",
   "license": "ISC",
@@ -28,7 +30,7 @@
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-prettier": "^3.4.0",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.1",
+    "html-webpack-plugin": "^4.5.2",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "mini-css-extract-plugin": "^1.4.0",
@@ -37,8 +39,8 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.35.1",
-    "webpack-cli": "^4.5.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
