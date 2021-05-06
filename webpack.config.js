@@ -19,6 +19,16 @@ module.exports = {
     port: 3000,
     stats: "normal",
     open: true,
+    before: (app) => {
+      app.get("/api/users", (req, res) => {
+        res.json([
+          { id: 1, name: "Allen" },
+          { id: 2, name: "KTH" },
+          { id: 3, name: "Kimtaehoon" },
+          { id: 4, name: "JinDX" },
+        ]);
+      });
+    },
   },
   module: {
     rules: [
@@ -26,9 +36,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: path.resolve("./my-webpack-loader.js"),
-          },
           {
             loader: "babel-loader",
           },
