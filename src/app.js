@@ -2,20 +2,27 @@
 import "./css/base.css";
 import "./scss/normalize.scss";
 import seoyeji from "./images/seoyeji2.jpeg";
-import axios from "axios";
+import result from "./result";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const img = document.createElement("img");
   img.src = seoyeji;
   document.getElementById("main").appendChild(img);
 
-  const res = await axios.get("/api/users");
-  const str = (res.data || [])
-    .map((item) => {
-      return `<div>id: ${item.id}, Name: ${item.name}</div>`;
-    })
-    .join("");
-  document.querySelector("#main").insertAdjacentHTML("beforeend", str);
+  const main = document.querySelector("#main");
+  const str = await result.render();
+  main.insertAdjacentHTML("beforeend", str);
+
+  if (module.hot) {
+    console.log("핫 모듈 ON !");
+
+    module.hot.accept("./result", async () => {
+      const str = await result.render();
+      const list = main.querySelector("#list");
+      list.innerHTML = "";
+      list.insertAdjacentHTML("beforeend", str);
+    });
+  }
 });
 
 // console.log(sum(10, 15));
