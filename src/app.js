@@ -5,6 +5,8 @@ import seoyeji from "./images/seoyeji2.jpeg";
 import result from "./result";
 
 document.addEventListener("DOMContentLoaded", async () => {
+  console.log("module = ", module);
+  console.log("module.hot = ", module.hot);
   const img = document.createElement("img");
   img.src = seoyeji;
   document.getElementById("main").appendChild(img);
@@ -12,7 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const main = document.querySelector("#main");
   const str = await result.render();
   main.insertAdjacentHTML("beforeend", str);
-
   if (module.hot) {
     console.log("핫 모듈 ON !");
 
@@ -25,7 +26,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// console.log(sum(10, 15));
 // console.log("process.env.NODE_ENV =", process.env.NODE_ENV);
 // console.log("TWO =", TWO);
 // console.log("api.domain =", api.domain);

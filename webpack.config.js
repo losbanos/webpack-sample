@@ -6,8 +6,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const apiMocker = require("connect-api-mocker");
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+const mode = process.env.NODE_ENV || "development";
 
 module.exports = {
+  mode: mode,
   entry: {
     main: "./src/app.js",
   },
@@ -24,6 +28,21 @@ module.exports = {
       app.use(apiMocker("/api", "mocks/api"));
     },
     hot: true,
+  },
+  optimization: {
+    minimizer:
+      process.env.NODE_ENV === "production"
+        ? [
+            new OptimizeCssAssetsWebpackPlugin(),
+            new TerserWebpackPlugin({
+              terserOptions: {
+                compress: {
+                  drop_console: true,
+                },
+              },
+            }),
+          ]
+        : [],
   },
   module: {
     rules: [
