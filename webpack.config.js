@@ -14,7 +14,6 @@ module.exports = {
   mode: mode,
   entry: {
     main: "./src/app.js",
-    result: "./src/result.js",
   },
   output: {
     path: path.resolve("./dist"),
@@ -44,9 +43,6 @@ module.exports = {
             }),
           ]
         : [],
-    splitChunks: {
-      chunks: "all",
-    },
   },
   module: {
     rules: [

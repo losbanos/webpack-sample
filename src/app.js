@@ -2,7 +2,7 @@
 import "./css/base.css";
 import "./scss/normalize.scss";
 import seoyeji from "./images/seoyeji2.jpeg";
-import result from "./result";
+// import result from "./result";
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("module = ", module);
@@ -11,9 +11,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   img.src = seoyeji;
   document.getElementById("main").appendChild(img);
 
+  let result = "";
+
   const main = document.querySelector("#main");
-  const str = await result.render();
-  main.insertAdjacentHTML("beforeend", str);
+  import(/* webpackChunkName: "resultChunk" */ "./result").then(
+    async (module) => {
+      result = module.default;
+      const str = await result.render();
+      main.insertAdjacentHTML("beforeend", str);
+    }
+  );
   if (module.hot) {
     console.log("핫 모듈 ON !");
 
